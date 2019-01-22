@@ -28,7 +28,7 @@ def add_students_to_table(students):
     """Add list of students to table"""
     for student_name, points in students.items():
         try:
-            Student.create(username=student_name, points=points
+            Student.create(username=student_name, points=points)
         except IntegrityError:  # IntError occurs when username already exists
             student_record = Student.get(username=student_name)
             if student_record.points != points:
